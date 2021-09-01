@@ -1,14 +1,14 @@
 import React from "react";
-import Canvas from "../components/Canvas";
-import ExerciseGenerator from "../components/ExerciseGenerator";
-import ProcessBar from "../components/ProcessBar.jsx";
-import AppContext from "../context/AppContext";
+import Canvas from "../Components/Canvas";
+import ExerciseGenerator from "../Components/ExerciseGenerator";
+import ProcessBar from "../Components/ProcessBar.jsx";
+import Lives from "../Components/Lives";
 
 function Game() {
 	return (
         <div>
-            <h1></h1>
-			<ProcessBar />
+            <ProcessBar />
+            <Lives />
 			<ExerciseGenerator />
 			<Canvas />
 		</div>
