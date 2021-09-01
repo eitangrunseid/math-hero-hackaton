@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./ExerciseGenerator.css";
+import AppContext from "../context/AppContext";
 
 function ExerciseGenerator() {
+  const { setAnswer } = useContext(AppContext);
   const [max, setMax] = useState(9);
   const [output, setOutput] = useState([]);
   const [instructions, setInstructions] = useState(
@@ -21,12 +23,13 @@ function ExerciseGenerator() {
 
   useEffect(() => {
     if (max !== 0) {
-      const init = [];
+      const initArray = [];
       const randImoji = imojis[Math.floor(Math.random() * imojis.length)];
       for (let i = 0; i < Math.floor(Math.random() * max + 1); i++) {
-        init.push(randImoji);
+        initArray.push(randImoji);
       }
-      setOutput(init);
+      setAnswer(initArray.length);
+      setOutput(initArray);
     }
   }, [max]);
 
