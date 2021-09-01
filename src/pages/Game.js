@@ -2,16 +2,16 @@ import React from "react";
 import Canvas from "../Components/Canvas";
 import ExerciseGenerator from "../Components/ExerciseGenerator";
 import Lives from "../Components/Lives";
-
+import ProcessBar from "../Components/ProcessBar";
 function Game() {
-	return (
-		<div>
-			<ProcessBar />
-			<Lives />
-			<ExerciseGenerator />
-			<Canvas />
-		</div>
-	);
+  return (
+    <div>
+      <ProcessBar />
+      <Lives />
+      <ExerciseGenerator />
+      <Canvas />
+    </div>
+  );
 }
 
 export default Game;
