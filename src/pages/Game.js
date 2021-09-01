@@ -1,12 +1,14 @@
-import React from 'react'
-import Canvas from '../components/Canvas'
+import React from "react";
+import Canvas from "../components/Canvas";
+import ExerciseGenerator from "../components/ExerciseGenerator";
 
 function Game() {
-    return (
-        <div>
-          <Canvas />  
-        </div>
-    )
+  return (
+    <div>
+      <ExerciseGenerator />
+      <Canvas />
+    </div>
+  );
 }
 
 export default Game;
