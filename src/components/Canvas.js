@@ -15,34 +15,42 @@ const Canvas = class extends React.Component {
 
   render() {
     return (
-      <div className="painter-wrapper">
-        <ReactSketchCanvas
-          style={styles}
-          ref={this.canvas}
-          strokeWidth={10}
-          strokeColor="black"
-          width="100%"
-          height="100%"
-        />
-        <button
-          onClick={() => {
-            this.canvas.current
-              .exportImage("png")
-              .then((data) => {
-                const image = {
-                  image: data,
-                };
-                console.log(JSON.stringify(image));
-              })
-              .catch((e) => {
-                console.log(e);
-              });
-          }}
-        >
-          Get Image
-        </button>
-      </div>
-    );
+			<div className="painter-wrapper">
+				<i class="fas fa-paint-brush"></i>
+				<ReactSketchCanvas
+					style={styles}
+					ref={this.canvas}
+					strokeWidth={10}
+					strokeColor="black"
+					width="100%"
+					height="100%"
+				/>
+				<button
+					onClick={() => {
+						this.canvas.current
+							.exportImage("png")
+							.then((data) => {
+								const image = {
+									image: data
+								};
+								console.log(JSON.stringify(image));
+							})
+							.catch((e) => {
+								console.log(e);
+							});
+					}}
+				>
+					Get Image
+				</button>
+				<button
+					onClick={() => {
+						this.canvas.current.clearCanvas();
+					}}
+				>
+					clear
+				</button>
+			</div>
+		);
   }
 };
 
