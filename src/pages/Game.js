@@ -1,8 +1,7 @@
 import React from "react";
-import Canvas from "../components/Canvas";
-import ExerciseGenerator from "../components/ExerciseGenerator";
-import Lives from "../components/Lives";
-import ProcessBar from "../components/ProcessBar";
+import Canvas from "../Components/Canvas";
+import ExerciseGenerator from "../Components/ExerciseGenerator";
+import Lives from "../Components/Lives";
 
 function Game() {
 	return (
