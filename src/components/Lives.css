@@ -1,0 +1,10 @@
+.lives-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.lives {
+  display: flex;
+  flex-direction: row;
+}
