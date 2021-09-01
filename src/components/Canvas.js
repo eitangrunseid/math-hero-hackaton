@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
 const styles = {
@@ -19,8 +20,9 @@ const Canvas = class extends React.Component {
         <ReactSketchCanvas
           style={styles}
           ref={this.canvas}
-          strokeWidth={10}
-          strokeColor="black"
+          strokeWidth={20}
+          strokeColor="white"
+          canvasColor="black"
           width="100%"
           height="100%"
         />
@@ -33,6 +35,16 @@ const Canvas = class extends React.Component {
                   image: data,
                 };
                 console.log(JSON.stringify(image));
+                axios.post(
+                  "https://math-herro.herokuapp.com/api",
+                  JSON.stringify(image),
+                  {
+                    headers: {
+                      "Access-Control-Allow-Origin": "*",
+                      "Content-Type": "application/json",
+                    },
+                  }
+                );
               })
               .catch((e) => {
                 console.log(e);

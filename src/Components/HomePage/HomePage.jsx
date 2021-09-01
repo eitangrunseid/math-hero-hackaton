@@ -9,7 +9,7 @@ export default function HomePage() {
       <div>
         <input type="text" name="" id="" />
       </div>
-      <button class="btn">Start</button>
+      <button className="btn">Start</button>
     </div>
   );
 }

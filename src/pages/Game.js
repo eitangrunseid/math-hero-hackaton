@@ -3,16 +3,18 @@ import Canvas from "../Components/Canvas";
 import ExerciseGenerator from "../Components/ExerciseGenerator";
 import ProcessBar from "../Components/ProcessBar.jsx";
 import Lives from "../Components/Lives";
+import Headline from "../Components/Headline";
 
 function Game() {
-	return (
-        <div>
-            <ProcessBar />
-            <Lives />
-			<ExerciseGenerator />
-			<Canvas />
-		</div>
-	);
+  return (
+    <div className="game">
+      <Headline />
+      <Lives />
+      <ProcessBar />
+      <ExerciseGenerator />
+      <Canvas />
+    </div>
+  );
 }
 
 export default Game;
