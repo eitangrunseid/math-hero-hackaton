@@ -1,0 +1,17 @@
+.generator-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .instructions {
+
+} */
+
+.imojis {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 46px;
+  width: 100%;
+}

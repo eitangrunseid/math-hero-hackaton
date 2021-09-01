@@ -1,13 +1,35 @@
+import React, { useState } from "react";
+import Main from "./pages/Main";
+import Game from "./pages/Game";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./Components/HomePage/HomePage";
+import AppContext from "./context/AppContext.js";
 
 function App() {
+  const [userName, setUserName] = useState();
+  const [level, setLeveLl] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <HomePage />
-      </header>
-    </div>
+    <Router>
+      <AppContext.Provider
+        value={{
+          userName: userName,
+          setUserName: setUserName,
+          level: level,
+          setLevel: setLevel,
+        }}
+      >
+        <div className="App">
+          <Switch>
+            <Route path="/game">
+              <Game />
+            </Route>
+            <Route path="/">
+              <Main />
+            </Route>
+          </Switch>
+        </div>
+      </AppContext.Provider>
+    </Router>
   );
 }
 
