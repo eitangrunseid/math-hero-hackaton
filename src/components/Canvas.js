@@ -29,10 +29,13 @@ const Canvas = class extends React.Component {
 						this.canvas.current
 							.exportImage("png")
 							.then((data) => {
-								console.log(data);
+                const image = {
+                  image : data 
+                }
+                console.log(JSON.stringify(image));
 							})
 							.catch((e) => {
-								console.log(e);
+                console.log(e);
 							});
 					}}
 				>
