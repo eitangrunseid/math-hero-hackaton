@@ -6,8 +6,10 @@ import "./App.css";
 import AppContext from "./context/AppContext.js";
 
 function App() {
-  const [userName, setUserName] = useState();
-  const [level, setLeveLl] = useState();
+  const [userName, setUserName] = useState("Eitan");
+  const [level, setLevel] = useState(4);
+  const [answer, setAnswer] = useState();
+  const [lives, setLives] = useState(3);
   return (
     <Router>
       <AppContext.Provider
@@ -16,6 +18,10 @@ function App() {
           setUserName: setUserName,
           level: level,
           setLevel: setLevel,
+          answer: answer,
+          setAnswer: setAnswer,
+          lives: lives,
+          setLives: setLives,
         }}
       >
         <div className="App">
