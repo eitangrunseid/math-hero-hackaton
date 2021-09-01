@@ -25,14 +25,16 @@ function App() {
         }}
       >
         <div className="App">
-          <Switch>
-            <Route path="/game">
-              <Game />
-            </Route>
-            <Route path="/">
-              <Main />
-            </Route>
-          </Switch>
+          <div className="App-header">
+            <Switch>
+              <Route path="/game">
+                <Game />
+              </Route>
+              <Route path="/">
+                <Main />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </AppContext.Provider>
     </Router>
