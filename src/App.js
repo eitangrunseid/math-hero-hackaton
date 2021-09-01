@@ -7,7 +7,7 @@ import AppContext from "./context/AppContext.js";
 
 function App() {
   const [userName, setUserName] = useState();
-  const [level, setLeveLl] = useState();
+  const [level, setLevel] = useState();
   return (
     <Router>
       <AppContext.Provider
@@ -19,14 +19,16 @@ function App() {
         }}
       >
         <div className="App">
-          <Switch>
-            <Route path="/game">
-              <Game />
-            </Route>
-            <Route path="/">
-              <Main />
-            </Route>
-          </Switch>
+          <div className="App-header">
+            <Switch>
+              <Route path="/game">
+                <Game />
+              </Route>
+              <Route path="/">
+                <Main />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </AppContext.Provider>
     </Router>
