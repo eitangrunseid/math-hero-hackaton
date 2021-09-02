@@ -35,16 +35,15 @@ const Canvas = class extends React.Component {
                   image: data,
                 };
                 console.log(JSON.stringify(image));
-                axios.post(
-                  "https://math-herro.herokuapp.com/api",
-                  JSON.stringify(image),
-                  {
-                    headers: {
-                      "Access-Control-Allow-Origin": "*",
-                      "Content-Type": "application/json",
-                    },
-                  }
-                );
+                axios({
+                  method: "post",
+                  url: "https://math-herro.herokuapp.com/api",
+                  headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json",
+                  },
+                  data: JSON.stringify(image),
+                });
               })
               .catch((e) => {
                 console.log(e);
