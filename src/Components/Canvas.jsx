@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import modal from "../Components/modal";
 
@@ -9,13 +10,14 @@ const styles = {
 };
 
 const Canvas = class extends React.Component {
+  static contextType = AppContext;
   constructor(props) {
     super(props);
-
     this.canvas = React.createRef();
   }
 
   render() {
+    const context = this.context;
     return (
       <div className="painter-wrapper">
         <ReactSketchCanvas
@@ -31,12 +33,12 @@ const Canvas = class extends React.Component {
           onClick={() => {
             this.canvas.current
               .exportImage("png")
-              .then((data) => {
+              .then(async (data) => {
                 const image = {
                   image: data,
                 };
                 console.log(JSON.stringify(image));
-                axios({
+                const fetchData = await axios({
                   method: "post",
                   url: "https://math-herro.herokuapp.com/api",
                   headers: {
@@ -45,6 +47,12 @@ const Canvas = class extends React.Component {
                   },
                   data: JSON.stringify(image),
                 });
+                if (fetchData.data[0].Num0 == context.answer) {
+                } else {
+                  context.setLives(() => {}); //eitan
+                }
+                console.log(fetchData.data[0].Num0);
+                console.log(context.answer);
               })
               .catch((e) => {
                 console.log(e);
