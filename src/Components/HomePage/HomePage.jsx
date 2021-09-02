@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./HomePage.css";
+import AppContext from "../../context/AppContext";
 
 export default function HomePage() {
+  const { setUserName } = useContext(AppContext);
+  const [name, setName] = useState("");
+
   return (
     <div>
       <h1 className="title">Math Hero</h1>
-
-      <h2 className="your-name">Enter your Nickname</h2>
-      <div className="container">
-        <input type="text" name="name" id="name-input" required />
+      <h2 className="your-name">Your Name</h2>
+      <div>
+        <input
+          type="text"
+          onKeyUp={(e) => {
+            setName(e.target.value);
+          }}
+          id="name"
+        />
       </div>
-      <button className="btn">Start</button>
+      <button
+        className="btn"
+        onClick={() => {
+          setUserName();
+        }}
+      >
+        Start
+      </button>
     </div>
   );
 }

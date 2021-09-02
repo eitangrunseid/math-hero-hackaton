@@ -10,6 +10,7 @@ function App() {
   const [level, setLevel] = useState(4);
   const [answer, setAnswer] = useState();
   const [lives, setLives] = useState(3);
+  const [process, setProcess] = useState(0);
   return (
     <Router>
       <AppContext.Provider
