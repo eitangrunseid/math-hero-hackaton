@@ -12,6 +12,7 @@ function App() {
 	const [lives, setLives] = useState(3);
 	const [progress, setProgress] = useState(0);
 	const [question, setQuestion] = useState(false)
+	const [clear, setClear] = useState(false)
 	return (
 		<Router>
 			<AppContext.Provider
@@ -27,7 +28,9 @@ function App() {
 					progress: progress,
 					setProgress: setProgress,
 					question: question,
-					setQuestion: setQuestion
+					setQuestion: setQuestion,
+					clear: clear,
+					setClear: setClear
 				}}
 			>
 				<div className="App">

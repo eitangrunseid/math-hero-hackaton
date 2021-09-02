@@ -56,11 +56,13 @@ const Canvas = class extends React.Component {
 									if (response.data[1].Num0 == context.answer) {
 										context.setProgress((prev) => prev + 20);
 										Alert("correct");
-										context.setQuestion(!context.question);
+                    context.setQuestion(!context.question);
+                    this.canvas.current.clearCanvas();
 									} else {
 										Alert("incorrect");
 										context.setLives((prev) => prev - 1);
-										context.setQuestion(!context.question);
+                    context.setQuestion(!context.question);
+                    this.canvas.current.clearCanvas();
 									}
 								});
 							})
