@@ -53,6 +53,10 @@ const Canvas = class extends React.Component {
                     <Link to="/" />
 										return;
 									}
+									if (context.progress === 100) {
+                    Alert("next level");
+										return;
+									}
 									if (response.data[1].Num0 == context.answer) {
 										context.setProgress((prev) => prev + 20);
 										Alert("correct");
@@ -76,8 +80,6 @@ const Canvas = class extends React.Component {
         <button onClick={() => {
           this.canvas.current.clearCanvas();
         }}>
-          
-       
           Clear
         </button>
 			</div>

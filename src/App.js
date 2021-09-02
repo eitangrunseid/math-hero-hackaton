@@ -29,8 +29,6 @@ function App() {
 					setProgress: setProgress,
 					question: question,
 					setQuestion: setQuestion,
-					clear: clear,
-					setClear: setClear
 				}}
 			>
 				<div className="App">
