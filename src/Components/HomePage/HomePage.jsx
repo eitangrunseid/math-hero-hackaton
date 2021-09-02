@@ -5,11 +5,12 @@ export default function HomePage() {
   return (
     <div>
       <h1 className="title">Math Hero</h1>
-      <h2 className="your-name">Your Name</h2>
-      <div>
-        <input type="text" name="" id="" />
+
+      <h2 className="your-name">Enter your Nickname</h2>
+      <div className="container">
+        <input type="text" name="name" id="name-input" required />
       </div>
-      <button class="btn">Start</button>
+      <button className="btn">Start</button>
     </div>
   );
 }

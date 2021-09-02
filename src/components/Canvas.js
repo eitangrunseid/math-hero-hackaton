@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
+import modal from "../Components/modal";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -33,6 +34,7 @@ const Canvas = class extends React.Component {
                   image: data,
                 };
                 console.log(JSON.stringify(image));
+                <modal />;
               })
               .catch((e) => {
                 console.log(e);
