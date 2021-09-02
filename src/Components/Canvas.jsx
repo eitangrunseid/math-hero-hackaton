@@ -79,7 +79,7 @@ const Canvas = class extends React.Component {
                 });
             }}
           >
-            Get Image
+            Send Image
           </button>
           <button
             className="answer-btn"
