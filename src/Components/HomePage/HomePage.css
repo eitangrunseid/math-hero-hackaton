@@ -85,3 +85,12 @@
 * {
   outline: none;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .your-name {
+    color: white;
+    margin-top: 50px;
+    font-size: 35px;
+    cursor: default;
+  }
+}

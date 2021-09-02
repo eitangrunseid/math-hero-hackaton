@@ -4,9 +4,9 @@
   justify-content: center;
 }
 
-/* .instructions {
-
-} */
+.instructions {
+  font-size: 30px;
+}
 
 .imojis {
   display: flex;

@@ -1,4 +1,11 @@
 .return-wrap {
   width: 100%;
   text-align: left;
+  margin-bottom: 30px;
+  margin-right: 200px;
+}
+
+.goback-icon {
+  height: 30px;
+  width: 30px;
 }

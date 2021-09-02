@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import modal from "../Components/modal";
+import "./Canvas.css";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -21,6 +21,7 @@ const Canvas = class extends React.Component {
     return (
       <div className="painter-wrapper">
         <ReactSketchCanvas
+          className="canvas"
           style={styles}
           ref={this.canvas}
           strokeWidth={20}
@@ -30,6 +31,7 @@ const Canvas = class extends React.Component {
           height="100%"
         />
         <button
+          className="answer-btn"
           onClick={() => {
             this.canvas.current
               .exportImage("png")
