@@ -2,12 +2,16 @@ import React, { useContext, useState, useEffect } from "react";
 import "./ProcessBar.css";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
+import AppContext from "../context/AppContext";
 
 class ProcessBar extends React.Component {
+  static contextType = AppContext;
+
   render() {
+    const context = this.context;
     return (
       <ProgressBar
-        percent={75}
+        percent={context.progress}
         filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
       >
         <Step transition="scale">

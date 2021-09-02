@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import "./HomePage.css";
 import AppContext from "../../context/AppContext";
-import Alert from "../Alert";
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
   const { setUserName } = useContext(AppContext);
   const [name, setName] = useState("");
@@ -19,14 +20,16 @@ export default function HomePage() {
           id="name-input"
         />
       </div>
-      <button
-        className="btn"
-        onClick={() => {
-          setUserName();
-        }}
-      >
-        Start
-      </button>
+      <Link to="/game">
+        <button
+          className="btn"
+          onClick={() => {
+            setUserName(name);
+          }}
+        >
+          Start
+        </button>
+      </Link>
     </div>
   );
 }
