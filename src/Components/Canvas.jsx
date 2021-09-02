@@ -48,7 +48,7 @@ const Canvas = class extends React.Component {
                 });
                 if (fetchData.data[0].Num0 == context.answer) {
                 } else {
-                  context.setLives(() => {}); //eitan
+                  context.setLives((prev) => {}); //eitan
                 }
                 console.log(fetchData.data[0].Num0);
                 console.log(context.answer);

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./HomePage.css";
 import AppContext from "../../context/AppContext";
+import { Link } from 'react-router-dom'
 
 export default function HomePage() {
   const { setUserName } = useContext(AppContext);
@@ -19,14 +20,16 @@ export default function HomePage() {
           id="name"
         />
       </div>
+      <Link to="/game">
       <button
         className="btn"
         onClick={() => {
-          setUserName();
+          setUserName(name);
         }}
       >
         Start
       </button>
+      </Link>
     </div>
   );
 }
