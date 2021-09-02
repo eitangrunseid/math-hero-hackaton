@@ -11,6 +11,7 @@ function App() {
 	const [answer, setAnswer] = useState();
 	const [lives, setLives] = useState(3);
 	const [progress, setProgress] = useState(0);
+	const [question, setQuestion] = useState(false)
 	return (
 		<Router>
 			<AppContext.Provider
@@ -24,7 +25,9 @@ function App() {
 					lives: lives,
 					setLives: setLives,
 					progress: progress,
-					setProgress: setProgress
+					setProgress: setProgress,
+					question: question,
+					setQuestion: setQuestion
 				}}
 			>
 				<div className="App">

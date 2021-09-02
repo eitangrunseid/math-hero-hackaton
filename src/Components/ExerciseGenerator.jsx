@@ -3,7 +3,7 @@ import "./ExerciseGenerator.css";
 import AppContext from "../context/AppContext";
 
 function ExerciseGenerator() {
-  const { setAnswer } = useContext(AppContext);
+  const { setAnswer, question } = useContext(AppContext);
   const [max, setMax] = useState(9);
   const [output, setOutput] = useState([]);
   const [instructions, setInstructions] = useState(
@@ -22,16 +22,16 @@ function ExerciseGenerator() {
   useEffect(() => {}, []);
 
   useEffect(() => {
-    if (max !== 0) {
-      const initArray = [];
-      const randImoji = imojis[Math.floor(Math.random() * imojis.length)];
-      for (let i = 0; i < Math.floor(Math.random() * max + 1); i++) {
-        initArray.push(randImoji);
-      }
-      setAnswer(initArray.length);
-      setOutput(initArray);
-    }
-  }, [max]);
+		if (max !== 0) {
+			const initArray = [];
+			const randImoji = imojis[Math.floor(Math.random() * imojis.length)];
+			for (let i = 0; i < Math.floor(Math.random() * max + 1); i++) {
+				initArray.push(randImoji);
+			}
+			setAnswer(initArray.length);
+			setOutput(initArray);
+		}
+	}, [max, question]);
 
   return (
     <div className="generator-wrap">
