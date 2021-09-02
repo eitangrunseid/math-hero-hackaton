@@ -3,8 +3,7 @@ import axios from "axios";
 import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import Alert from "./Alert";
-import ExerciseGenerator from "./ExerciseGenerator";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const styles = {
 	border: "0.0625rem solid #9c9c9c",
@@ -50,7 +49,8 @@ const Canvas = class extends React.Component {
 									data: JSON.stringify(image)
 								}).then((response) => {
 									if (!context.lives) {
-										Alert("game over");
+                    Alert("game over");
+                    <Link to="/" />
 										return;
 									}
 									if (response.data[1].Num0 == context.answer) {
@@ -70,7 +70,14 @@ const Canvas = class extends React.Component {
 					}}
 				>
 					Get Image
-				</button>
+        </button>
+        <button onClick={() => {
+          this.canvas.current.clearCanvas();
+        }}>
+          
+       
+          Clear
+        </button>
 			</div>
 		);
 	}
