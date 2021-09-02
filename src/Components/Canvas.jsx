@@ -51,6 +51,7 @@ const Canvas = class extends React.Component {
                     },
                     data: JSON.stringify(image),
                   }).then((response) => {
+                    console.log('response:', response)
                     if (!context.lives) {
                       Alert("game over");
                       <Link to="/" />;
