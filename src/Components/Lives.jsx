@@ -8,7 +8,7 @@ function Lives() {
 
   return (
     <div className="lives-wrap">
-      <div>{userName}</div>
+      <div style={{ fontSize: "20px", color: "white" }}>{userName}</div>
       <div className="lives">
         <div className="heart-wrap">
           {lives > 0 ? <IoIosHeart /> : <IoIosHeartEmpty />}
@@ -26,7 +26,7 @@ function Lives() {
           {lives > 4 ? <IoIosHeart /> : <IoIosHeartEmpty />}
         </div>
       </div>
-      <div>lvl.{level}</div>
+      <div style={{ fontSize: "20px" }}>lvl.{level}</div>
     </div>
   );
 }

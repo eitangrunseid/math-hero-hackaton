@@ -6,40 +6,46 @@ import "./App.css";
 import AppContext from "./context/AppContext.js";
 
 function App() {
-  const [userName, setUserName] = useState("Eitan");
-  const [level, setLevel] = useState(4);
-  const [answer, setAnswer] = useState();
-  const [lives, setLives] = useState(3);
-  const [process, setProcess] = useState(0);
-  return (
-    <Router>
-      <AppContext.Provider
-        value={{
-          userName: userName,
-          setUserName: setUserName,
-          level: level,
-          setLevel: setLevel,
-          answer: answer,
-          setAnswer: setAnswer,
-          lives: lives,
-          setLives: setLives,
-        }}
-      >
-        <div className="App">
-          <div className="App-header">
-            <Switch>
-              <Route path="/game">
-                <Game />
-              </Route>
-              <Route path="/">
-                <Main />
-              </Route>
-            </Switch>
-          </div>
-        </div>
-      </AppContext.Provider>
-    </Router>
-  );
+	const [userName, setUserName] = useState("Eitan");
+	const [level, setLevel] = useState(4);
+	const [answer, setAnswer] = useState();
+	const [lives, setLives] = useState(3);
+	const [progress, setProgress] = useState(0);
+	const [question, setQuestion] = useState(false)
+	const [clear, setClear] = useState(false)
+	return (
+		<Router>
+			<AppContext.Provider
+				value={{
+					userName: userName,
+					setUserName: setUserName,
+					level: level,
+					setLevel: setLevel,
+					answer: answer,
+					setAnswer: setAnswer,
+					lives: lives,
+					setLives: setLives,
+					progress: progress,
+					setProgress: setProgress,
+					question: question,
+					setQuestion: setQuestion,
+				}}
+			>
+				<div className="App">
+					<div className="App-header">
+						<Switch>
+							<Route path="/game">
+								<Game />
+							</Route>
+							<Route path="/">
+								<Main />
+							</Route>
+						</Switch>
+					</div>
+				</div>
+			</AppContext.Provider>
+		</Router>
+	);
 }
 
 export default App;

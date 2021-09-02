@@ -2,7 +2,9 @@ import React from "react";
 import axios from "axios";
 import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import modal from "../Components/modal";
+import Alert from "./Alert";
+import { Link } from "react-router-dom";
+import "./Canvas.css";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -29,38 +31,64 @@ const Canvas = class extends React.Component {
           width="100%"
           height="100%"
         />
-        <button
-          onClick={() => {
-            this.canvas.current
-              .exportImage("png")
-              .then(async (data) => {
-                const image = {
-                  image: data,
-                };
-                console.log(JSON.stringify(image));
-                const fetchData = await axios({
-                  method: "post",
-                  url: "https://math-herro.herokuapp.com/api",
-                  headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Content-Type": "application/json",
-                  },
-                  data: JSON.stringify(image),
+        <div className>
+          <button
+            className="answer-btn"
+            onClick={() => {
+              this.canvas.current
+                .exportImage("png")
+                .then(async (data) => {
+                  const image = {
+                    image: data,
+                  };
+
+                  axios({
+                    method: "post",
+                    url: "https://math-herro.herokuapp.com/api",
+                    headers: {
+                      "Access-Control-Allow-Origin": "*",
+                      "Content-Type": "application/json",
+                    },
+                    data: JSON.stringify(image),
+                  }).then((response) => {
+                    if (!context.lives) {
+                      Alert("game over");
+                      <Link to="/" />;
+                      return;
+                    }
+                    if (context.progress === 100) {
+                      Alert("next level");
+                      return;
+                    }
+                    if (response.data[1].Num0 == context.answer) {
+                      context.setProgress((prev) => prev + 20);
+                      Alert("correct");
+                      context.setQuestion(!context.question);
+                      this.canvas.current.clearCanvas();
+                    } else {
+                      Alert("incorrect");
+                      context.setLives((prev) => prev - 1);
+                      context.setQuestion(!context.question);
+                      this.canvas.current.clearCanvas();
+                    }
+                  });
+                })
+                .catch((e) => {
+                  console.log(e);
                 });
-                if (fetchData.data[0].Num0 == context.answer) {
-                } else {
-                  context.setLives(() => {}); //eitan
-                }
-                console.log(fetchData.data[0].Num0);
-                console.log(context.answer);
-              })
-              .catch((e) => {
-                console.log(e);
-              });
-          }}
-        >
-          Get Image
-        </button>
+            }}
+          >
+            Get Image
+          </button>
+          <button
+            className="answer-btn"
+            onClick={() => {
+              this.canvas.current.clearCanvas();
+            }}
+          >
+            Clear
+          </button>
+        </div>
       </div>
     );
   }

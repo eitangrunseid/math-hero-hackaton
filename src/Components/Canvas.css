@@ -1,0 +1,46 @@
+.answer-btn {
+  background: rgb(182, 66, 182);
+  color: rgb(218, 218, 218);
+  border-style: outset;
+  border-color: purple;
+  height: 50px;
+  width: 100px;
+  text-shadow: none;
+  border-radius: 25px;
+  transition: border-radius 0.5s;
+  font-family: Rufing;
+  margin-top: 20px;
+}
+
+.answer-btn:hover {
+  border: 1pxsolid#eee;
+  border-radius: 15px;
+  box-shadow: 5px5px5px#eee;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: Rufing;
+  src: url(../Fonts/RufingPersonalUse-AL5Dp.otf);
+}
+
+.painter-wrapper {
+  width: 800px;
+  height: 800px;
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .painter-wrapper {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .painter-wrapper {
+    width: 500px;
+    height: 500px;
+  }
+}

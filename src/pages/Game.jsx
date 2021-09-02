@@ -4,19 +4,15 @@ import ExerciseGenerator from "../Components/ExerciseGenerator";
 import ProcessBar from "../Components/ProcessBar";
 import Lives from "../Components/Lives";
 import Headline from "../Components/Headline";
-import "./Game.css";
+
 function Game() {
   return (
-    <div>
+    <div className="game">
       <Headline />
       <Lives />
-      <div>
-        <ProcessBar />
-      </div>
+      <ProcessBar />
       <ExerciseGenerator />
-      <div>
-        <Canvas />
-      </div>
+      <Canvas />
     </div>
   );
 }
