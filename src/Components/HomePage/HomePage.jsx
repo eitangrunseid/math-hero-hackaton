@@ -9,7 +9,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <loader />
       <h1 className="title">Math Hero</h1>
       <h2 className="your-name">Your Name</h2>
       <div className="container">
