@@ -8,7 +8,7 @@ function Lives() {
 
   return (
     <div className="lives-wrap">
-      <div style={{ fontSize: "20px" }}>{userName}</div>
+      <div style={{ fontSize: "20px", color: "white" }}>{userName}</div>
       <div className="lives">
         <div className="heart-wrap">
           {lives > 0 ? <IoIosHeart /> : <IoIosHeartEmpty />}

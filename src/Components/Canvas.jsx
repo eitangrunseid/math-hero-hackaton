@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import "./Canvas.css";
 import Alert from "./Alert";
 import { Link } from "react-router-dom";
+import "./Canvas.css";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -31,8 +31,9 @@ const Canvas = class extends React.Component {
           width="100%"
           height="100%"
         />
-        <div className="buttons-container">
+        <div className>
           <button
+            className="answer-btn"
             onClick={() => {
               this.canvas.current
                 .exportImage("png")
@@ -80,6 +81,7 @@ const Canvas = class extends React.Component {
             Get Image
           </button>
           <button
+            className="answer-btn"
             onClick={() => {
               this.canvas.current.clearCanvas();
             }}
