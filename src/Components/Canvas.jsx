@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import AppContext from "../context/AppContext";
 import { ReactSketchCanvas } from "react-sketch-canvas";
+import modal from "../Components/modal";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",

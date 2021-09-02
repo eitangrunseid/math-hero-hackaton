@@ -1,17 +1,87 @@
 .title {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 80px;
-  color: white;
+  color: gold;
+  font-family: hyperblox;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15),
+    0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  transition: font-size 0.5s;
+}
+
+.title:hover {
+  font-size: 90px;
 }
 
 .your-name {
   color: white;
-  margin-top: 200px;
+  margin-top: 150px;
   font-size: 35px;
+  cursor: default;
 }
 
 .btn {
+  font-family: Rufing;
+  color: gold;
   margin-top: 60px;
   height: 30px;
   width: 200px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 30px;
+  text-shadow: 0px 1.5px 0px #b2a98f, 0px 7px 5px rgba(0, 0, 0, 0.15),
+    0px 12px 1px rgba(0, 0, 0, 0.1), 0px 17px 15px rgba(0, 0, 0, 0.1);
+  transition: font-size 0.1s;
+}
+
+.btn:hover {
+  color: rgba(255, 217, 0, 0.747);
+  font-size: 40px;
+}
+
+* {
+  font-family: "Teko", sans-serif;
+  outline: none;
+}
+
+.container input {
+  background-color: #fff;
+  border: 2px solid #666;
+  width: 300px;
+  height: 35px;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 25px;
+}
+.container input:focus + span,
+.container input:valid + span {
+  top: -49px;
+  background-color: #fff;
+  color: #e63946;
+}
+.container input:focus {
+  transition: ease-in-out 0.3s;
+  border: 2px solid violet;
+}
+
+#name-input {
+  border-radius: 25px;
+}
+
+@font-face {
+  font-family: Hyperblox;
+  src: url(../../Fonts/Hypeblox-L3YGZ.ttf);
+}
+
+@font-face {
+  font-family: Rufing;
+  src: url(../../Fonts/RufingPersonalUse-AL5Dp.otf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
+* {
+  outline: none;
 }
